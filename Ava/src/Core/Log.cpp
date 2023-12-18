@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Log.h"
 
 namespace Ava {
@@ -15,5 +16,4 @@ namespace Ava {
 		s_ClientLogger->set_level(spdlog::level::trace);
 
 	}
-
 }

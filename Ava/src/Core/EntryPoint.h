@@ -1,5 +1,4 @@
 #pragma once
-
 #ifdef AVA_PLATFORM_WINDOWS
 
 extern Ava::Application* Ava::CreateApplication();

@@ -1,4 +1,7 @@
+#include "pch.h"
 #include "Application.h"
+#include "Core/Events/ApplicationEvent.h"
+#include "Core/Log.h"
 
 namespace Ava {
 
@@ -12,6 +15,8 @@ namespace Ava {
 
 	void Ava::Application::Run()
 	{
+		WindowResizeEvent e(800, 600); 
+		AVA_WARN(e);
 		while (true);
 	}
 
