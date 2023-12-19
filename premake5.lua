@@ -11,6 +11,13 @@ workspace "Ava"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Ava/submodules/GLFW/include"
+
+include "Ava/submodules/GLFW"
+
+
+
 project "Ava"
 	location "Ava"
 	kind "SharedLib"
@@ -33,18 +40,28 @@ project "Ava"
 	includedirs
 	{
 		"%{prj.name}/submodules/spdlog/include",
-		"%{prj.name}/src"
+		"%{IncludeDir.GLFW}",
+		"%{prj.name}/src" 
+	}
+
+	links 
+	{ 
+		"GLFW",
+		"opengl32.lib",
+		"dwmapi.lib"
 	}
 
 	filter "system:windows"
-		cppdialect "C++14"
-		staticruntime "On"
+		cppdialect "C++17"
+		staticruntime "off"
+		runtime "Debug"
 		systemversion "latest"
 
 		defines
 		{
 			"AVA_PLATFORM_WINDOWS",
-			"AVA_BUILD_DLL"
+			"AVA_BUILD_DLL",
+			"AVA_ENABLE_ASSERTS"
 		}
 
 		postbuildcommands

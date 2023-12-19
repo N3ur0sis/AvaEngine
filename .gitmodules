@@ -1,3 +1,6 @@
 [submodule "Ava/submodules/spdlog"]
 	path = Ava/submodules/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Ava/submodules/GLFW"]
+	path = Ava/submodules/GLFW
+	url = https://github.com/glfw/glfw

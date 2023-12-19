@@ -27,13 +27,13 @@ namespace Ava {
 #define AVA_CORE_INFO(...) ::Ava::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define AVA_CORE_WARN(...) ::Ava::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define AVA_CORE_ERROR(...) ::Ava::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define AVA_CORE_FATAL(...) ::Ava::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+#define AVA_CORE_FATAL(...) ::Ava::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 //Client log macros
 #define AVA_TRACE(...) ::Ava::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define AVA_INFO(...)  ::Ava::Log::GetClientLogger()->info(__VA_ARGS__)
 #define AVA_WARN(...)  ::Ava::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define AVA_ERROR(...) ::Ava::Log::GetClientLogger()->error(__VA_ARGS__)
-#define AVA_FATAL(...) ::Ava::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#define AVA_FATAL(...) ::Ava::Log::GetClientLogger()->critical(__VA_ARGS__)
 
 
