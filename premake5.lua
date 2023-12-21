@@ -180,7 +180,7 @@ group "Dependencies"
 
 	project "ImGui"
 		kind "StaticLib"
-		location "Ava/submodules/imgui"
+		location "Ava/submodules"
 		language "C++"
 	
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
