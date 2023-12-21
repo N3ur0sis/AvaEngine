@@ -30,13 +30,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Realease|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
@@ -79,11 +79,12 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>AVA_PLATFORM_WINDOWS;AVA_BUILD_DLL;AVA_ENABLE_ASSERTS;AVA_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>submodules\spdlog\include;submodules\GLFW\include;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>AVA_PLATFORM_WINDOWS;AVA_BUILD_DLL;AVA_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;AVA_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>submodules\spdlog\include;submodules\GLFW\include;submodules\GLAD\include;submodules\imgui;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -94,7 +95,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\Ava\Ava.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Ava\Ava.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Ava\Ava.dll ..\bin\Debug-windows-x86_64\SandBox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Ava\Ava.dll ..\bin\Debug-windows-x86_64\SandBox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Ava\Ava.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Ava\Ava.dll ..\bin\Debug-windows-x86_64\AvaEditor &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Ava\Ava.dll ..\bin\Debug-windows-x86_64\AvaEditor &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Realease|x64'">
@@ -102,10 +103,10 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>AVA_PLATFORM_WINDOWS;AVA_BUILD_DLL;AVA_ENABLE_ASSERTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>submodules\spdlog\include;submodules\GLFW\include;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>AVA_PLATFORM_WINDOWS;AVA_BUILD_DLL;AVA_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>submodules\spdlog\include;submodules\GLFW\include;submodules\GLAD\include;submodules\imgui;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -115,7 +116,7 @@
       <ImportLibrary>..\bin\Realease-windows-x86_64\Ava\Ava.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Realease-windows-x86_64\Ava\Ava.dll\ (xcopy /Q /E /Y /I ..\bin\Realease-windows-x86_64\Ava\Ava.dll ..\bin\Realease-windows-x86_64\SandBox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Realease-windows-x86_64\Ava\Ava.dll ..\bin\Realease-windows-x86_64\SandBox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Realease-windows-x86_64\Ava\Ava.dll\ (xcopy /Q /E /Y /I ..\bin\Realease-windows-x86_64\Ava\Ava.dll ..\bin\Realease-windows-x86_64\AvaEditor &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Realease-windows-x86_64\Ava\Ava.dll ..\bin\Realease-windows-x86_64\AvaEditor &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
@@ -123,15 +124,15 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
-      <PreprocessorDefinitions>AVA_PLATFORM_WINDOWS;AVA_BUILD_DLL;AVA_ENABLE_ASSERTS;AVA_DISTRIBUTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>submodules\spdlog\include;submodules\GLFW\include;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>AVA_PLATFORM_WINDOWS;AVA_BUILD_DLL;AVA_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;AVA_DISTRIBUTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>submodules\spdlog\include;submodules\GLFW\include;submodules\GLAD\include;submodules\imgui;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -143,7 +144,7 @@
       <ImportLibrary>..\bin\Distribution-windows-x86_64\Ava\Ava.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Distribution-windows-x86_64\Ava\Ava.dll\ (xcopy /Q /E /Y /I ..\bin\Distribution-windows-x86_64\Ava\Ava.dll ..\bin\Distribution-windows-x86_64\SandBox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Distribution-windows-x86_64\Ava\Ava.dll ..\bin\Distribution-windows-x86_64\SandBox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Distribution-windows-x86_64\Ava\Ava.dll\ (xcopy /Q /E /Y /I ..\bin\Distribution-windows-x86_64\Ava\Ava.dll ..\bin\Distribution-windows-x86_64\AvaEditor &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Distribution-windows-x86_64\Ava\Ava.dll ..\bin\Distribution-windows-x86_64\AvaEditor &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -155,6 +156,8 @@
     <ClInclude Include="src\Core\Events\Event.h" />
     <ClInclude Include="src\Core\Events\KeyboardEvent.h" />
     <ClInclude Include="src\Core\Events\MouseEvent.h" />
+    <ClInclude Include="src\Core\Layer.h" />
+    <ClInclude Include="src\Core\LayerStack.h" />
     <ClInclude Include="src\Core\Log.h" />
     <ClInclude Include="src\Core\Window.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
@@ -162,6 +165,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp" />
+    <ClCompile Include="src\Core\Layer.cpp" />
+    <ClCompile Include="src\Core\LayerStack.cpp" />
     <ClCompile Include="src\Core\Log.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\pch.cpp">
@@ -171,6 +176,12 @@
   <ItemGroup>
     <ProjectReference Include="submodules\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="submodules\GLAD\GLAD.vcxproj">
+      <Project>{5D4A857C-4981-860D-F26D-6C10DE83020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="submodules\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -4,3 +4,7 @@
 [submodule "Ava/submodules/GLFW"]
 	path = Ava/submodules/GLFW
 	url = https://github.com/glfw/glfw
+[submodule "Ava/submodules/imgui"]
+	path = Ava/submodules/imgui
+	url = https://github.com/ocornut/imgui
+	branch = docking

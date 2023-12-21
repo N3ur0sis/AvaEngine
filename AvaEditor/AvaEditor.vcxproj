@@ -15,10 +15,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{D43924E3-4019-A37E-4931-2E55B58F09E0}</ProjectGuid>
+    <ProjectGuid>{84761F3F-F0E0-D3B5-391F-855BA5C8B10A}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SandBox</RootNamespace>
+    <RootNamespace>AvaEditor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -55,23 +55,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Debug-windows-x86_64\SandBox\</OutDir>
-    <IntDir>..\bin-int\Debug-windows-x86_64\SandBox\</IntDir>
-    <TargetName>SandBox</TargetName>
+    <OutDir>..\bin\Debug-windows-x86_64\AvaEditor\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\AvaEditor\</IntDir>
+    <TargetName>AvaEditor</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Realease|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Realease-windows-x86_64\SandBox\</OutDir>
-    <IntDir>..\bin-int\Realease-windows-x86_64\SandBox\</IntDir>
-    <TargetName>SandBox</TargetName>
+    <OutDir>..\bin\Realease-windows-x86_64\AvaEditor\</OutDir>
+    <IntDir>..\bin-int\Realease-windows-x86_64\AvaEditor\</IntDir>
+    <TargetName>AvaEditor</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\Distribution-windows-x86_64\SandBox\</OutDir>
-    <IntDir>..\bin-int\Distribution-windows-x86_64\SandBox\</IntDir>
-    <TargetName>SandBox</TargetName>
+    <OutDir>..\bin\Distribution-windows-x86_64\AvaEditor\</OutDir>
+    <IntDir>..\bin-int\Distribution-windows-x86_64\AvaEditor\</IntDir>
+    <TargetName>AvaEditor</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -130,7 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\SandBoxApp.cpp" />
+    <ClCompile Include="src\AvaEditorApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ava\Ava.vcxproj">
