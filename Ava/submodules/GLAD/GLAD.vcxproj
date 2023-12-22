@@ -54,31 +54,31 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\..\..\bin\Debug-windows-x86_64\GLAD\</OutDir>
-    <IntDir>..\..\..\bin-int\Debug-windows-x86_64\GLAD\</IntDir>
+    <OutDir>bin\Debug-windows-x86_64\GLAD\</OutDir>
+    <IntDir>bin-int\Debug-windows-x86_64\GLAD\</IntDir>
     <TargetName>GLAD</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Realease|x64'">
-    <OutDir>..\..\..\bin\Realease-windows-x86_64\GLAD\</OutDir>
-    <IntDir>..\..\..\bin-int\Realease-windows-x86_64\GLAD\</IntDir>
+    <OutDir>bin\Realease-windows-x86_64\GLAD\</OutDir>
+    <IntDir>bin-int\Realease-windows-x86_64\GLAD\</IntDir>
     <TargetName>GLAD</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
-    <OutDir>..\..\..\bin\Distribution-windows-x86_64\GLAD\</OutDir>
-    <IntDir>..\..\..\bin-int\Distribution-windows-x86_64\GLAD\</IntDir>
+    <OutDir>bin\Distribution-windows-x86_64\GLAD\</OutDir>
+    <IntDir>bin-int\Distribution-windows-x86_64\GLAD\</IntDir>
     <TargetName>GLAD</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
@@ -89,10 +89,10 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Realease|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
@@ -102,10 +102,10 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>

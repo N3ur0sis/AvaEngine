@@ -1,12 +1,11 @@
 #include "pch.h"
 #include "imgui.h"
 #include "ImGuiLayer.h"
-#include <Core/Application.h>
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
 #include <backends/imgui_impl_glfw.h>
 #include <backends/imgui_impl_opengl3.h>
-
+#include <Core/Application.h>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 
 Ava::ImGuiLayer::ImGuiLayer()
@@ -66,7 +65,7 @@ void Ava::ImGuiLayer::End()
 {
 	ImGuiIO& io = ImGui::GetIO();
 	Application& app = Application::Get();
-	io.DisplaySize = ImVec2(app.GetWindow().GetWidth(), app.GetWindow().GetHeight());
+	io.DisplaySize = ImVec2((float)app.GetWindow().GetWidth(), (float)app.GetWindow().GetHeight());
 
 	// Rendering
 	ImGui::Render();
