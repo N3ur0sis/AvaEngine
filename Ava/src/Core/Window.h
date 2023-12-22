@@ -34,5 +34,7 @@ namespace Ava
 
 		static Window* Create(const WindowProps& props = WindowProps());
 
+		virtual void* GetNativeWindow() const = 0;
+
 	};
 }

@@ -16,6 +16,8 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Ava/submodules/GLFW/include"
 IncludeDir["GLAD"] = "Ava/submodules/GLAD/include"
 IncludeDir["ImGui"] = "Ava/submodules/imgui"
+IncludeDir["ImGuiBE"] = "Ava/submodules/imgui/backends"
+
 
 group "Dependencies"
 
@@ -180,7 +182,7 @@ group "Dependencies"
 
 	project "ImGui"
 		kind "StaticLib"
-		location "Ava/submodules"
+		location "Ava/submodules/imgui"
 		language "C++"
 	
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -194,11 +196,31 @@ group "Dependencies"
 			"Ava/submodules/imgui/imgui_draw.cpp",
 			"Ava/submodules/imgui/imgui_internal.h",
 			"Ava/submodules/imgui/imgui_widgets.cpp",
+			"Ava/submodules/imgui/imgui_tables.cpp",
 			"Ava/submodules/imgui/imstb_rectpack.h",
 			"Ava/submodules/imgui/imstb_textedit.h",
 			"Ava/submodules/imgui/imstb_truetype.h",
-			"Ava/submodules/imgui/imgui_demo.cpp"
+			"Ava/submodules/imgui/imgui_demo.cpp",
+			"Ava/submodules/imgui/backends/imgui_impl_glfw.h",
+			"Ava/submodules/imgui/backends/imgui_impl_glfw.cpp",
+			"Ava/submodules/imgui/backends/imgui_impl_opengl3.h",
+			"Ava/submodules/imgui/backends/imgui_impl_opengl3.cpp",
+			"Ava/submodules/imgui/backends/imgui_impl_opengl3_loader.h"
+
 		}
+
+		includedirs
+		{
+			"Ava/submodules/imgui",
+			"Ava/submodules/GLFW/include"
+		}
+
+		links
+		{
+			"GLFW"
+		}
+
+
 	
 		filter "system:windows"
 			systemversion "latest"
@@ -239,7 +261,7 @@ project "Ava"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
 	}
 
 	includedirs
@@ -248,7 +270,9 @@ project "Ava"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
 		"%{IncludeDir.ImGui}",
-		"%{prj.name}/src" 
+		"%{IncludeDir.ImGuiBE}",
+		"%{prj.name}/src" ,
+		"%{prj.name}/submodules" 
 	}
 
 	links 
