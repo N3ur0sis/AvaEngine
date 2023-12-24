@@ -1,14 +1,15 @@
 #include <Ava.h>
-#include <Core/EntryPoint.h>
+#include <Engine/Core/EntryPoint.h>
+#include "EditorLayer.h"
 
 namespace Ava {
 
-	class AvaEditor : public Ava::Application
+	class AvaEditor : public Application
 	{
 	public:
 		AvaEditor() : Application("Ava Editor")
 		{
-	
+			PushLayer(new EditorLayer());
 		}
 		~AvaEditor()
 		{

@@ -62,7 +62,6 @@ project "Ava"
 		"GLAD",
 		"ImGui",
 		"opengl32.lib",
-		"dwmapi.lib"
 	}
 
 	filter "system:windows"
@@ -174,7 +173,7 @@ project "AvaEditor"
 		"Ava"
 	}
 
-	filter "system:windows"	
+	filter "system:windows"
 		systemversion "latest"
 
 		defines

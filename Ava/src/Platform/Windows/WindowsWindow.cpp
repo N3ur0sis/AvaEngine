@@ -1,8 +1,9 @@
 #include "pch.h"
 #include "WindowsWindow.h"
-#include "Core/Events/ApplicationEvent.h"
-#include "Core/Events/KeyboardEvent.h"
-#include "Core/Events/MouseEvent.h"
+#include "Engine/Core/Events/ApplicationEvent.h"
+#include "Engine/Core/Events/KeyboardEvent.h"
+#include "Engine/Core/Events/MouseEvent.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 
 namespace Ava {
 
@@ -45,10 +46,9 @@ namespace Ava {
 		}
 
 		m_Window = glfwCreateWindow((int)props.width, (int)props.height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
-
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		AVA_CORE_ASSERT(status, "Could not initialized GLAD!")
+		
+		m_gfwContext = new OpenGLContext(m_Window);
+		m_gfwContext->Init();
 
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
@@ -147,7 +147,7 @@ namespace Ava {
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_gfwContext->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)

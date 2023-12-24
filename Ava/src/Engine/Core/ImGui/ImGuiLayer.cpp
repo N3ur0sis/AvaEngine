@@ -3,14 +3,14 @@
 #include "ImGuiLayer.h"
 #include <backends/imgui_impl_glfw.h>
 #include <backends/imgui_impl_opengl3.h>
-#include <Core/Application.h>
+#include <Engine/Core/Application.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 
 Ava::ImGuiLayer::ImGuiLayer()
 {
-	OnAttach();
+
 }
 
 Ava::ImGuiLayer::~ImGuiLayer()
@@ -51,7 +51,8 @@ void Ava::ImGuiLayer::OnDetach()
 void Ava::ImGuiLayer::OnImGuiRender()
 {
 	static bool show = true;
-	ImGui::ShowDemoWindow(&show);
+	//ImGui::ShowDemoWindow(&show);
+
 }
 
 void Ava::ImGuiLayer::Begin()

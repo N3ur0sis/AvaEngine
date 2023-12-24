@@ -89,7 +89,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Realease|x64'">
@@ -108,7 +108,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
@@ -133,32 +133,36 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Ava.h" />
-    <ClInclude Include="src\Core\Application.h" />
-    <ClInclude Include="src\Core\Core.h" />
-    <ClInclude Include="src\Core\EntryPoint.h" />
-    <ClInclude Include="src\Core\Events\ApplicationEvent.h" />
-    <ClInclude Include="src\Core\Events\Event.h" />
-    <ClInclude Include="src\Core\Events\KeyboardEvent.h" />
-    <ClInclude Include="src\Core\Events\MouseEvent.h" />
-    <ClInclude Include="src\Core\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Core\Layer.h" />
-    <ClInclude Include="src\Core\LayerStack.h" />
-    <ClInclude Include="src\Core\Log.h" />
-    <ClInclude Include="src\Core\Window.h" />
+    <ClInclude Include="src\Engine\Core\Application.h" />
+    <ClInclude Include="src\Engine\Core\Core.h" />
+    <ClInclude Include="src\Engine\Core\EntryPoint.h" />
+    <ClInclude Include="src\Engine\Core\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Engine\Core\Events\Event.h" />
+    <ClInclude Include="src\Engine\Core\Events\KeyboardEvent.h" />
+    <ClInclude Include="src\Engine\Core\Events\MouseEvent.h" />
+    <ClInclude Include="src\Engine\Core\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Engine\Core\Layer.h" />
+    <ClInclude Include="src\Engine\Core\LayerStack.h" />
+    <ClInclude Include="src\Engine\Core\Log.h" />
+    <ClInclude Include="src\Engine\Core\Window.h" />
+    <ClInclude Include="src\Engine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Core\Application.cpp" />
-    <ClCompile Include="src\Core\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Core\Layer.cpp" />
-    <ClCompile Include="src\Core\LayerStack.cpp" />
-    <ClCompile Include="src\Core\Log.cpp" />
+    <ClCompile Include="src\Engine\Core\Application.cpp" />
+    <ClCompile Include="src\Engine\Core\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Engine\Core\Layer.cpp" />
+    <ClCompile Include="src\Engine\Core\LayerStack.cpp" />
+    <ClCompile Include="src\Engine\Core\Log.cpp" />
+    <ClCompile Include="src\Engine\Renderer\GraphicsContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

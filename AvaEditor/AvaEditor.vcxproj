@@ -128,7 +128,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\EditorLayer.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\AvaEditorApp.cpp" />
+    <ClCompile Include="src\EditorLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ava\Ava.vcxproj">

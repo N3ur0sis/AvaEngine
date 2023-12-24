@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Application.h"
-#include "Core/Events/ApplicationEvent.h"
-#include "Core/Log.h"
+#include "Engine/Core/Events/ApplicationEvent.h"
+#include "Engine/Core/Log.h"
 #include "glad/glad.h"
 #include <GLFW/glfw3.h>
 

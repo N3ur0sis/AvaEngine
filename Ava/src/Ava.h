@@ -1,11 +1,6 @@
 #pragma once
 
 // Only used by Ava applications (clients)
-#include "Core/Application.h"
-#include "Core/Layer.h"
-#include "Core/Log.h"
-
-// ----------PROGRAM ENTRY POINT --------------
-#include "Core/EntryPoint.h"
-// --------------------------------------------
-
+#include "Engine/Core/Application.h"
+#include "Engine/Core/Layer.h"
+#include "Engine/Core/Log.h"

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Core/Window.h"
-#include "glad/glad.h"
+#include "Engine/Core/Window.h"
+#include "Engine/Renderer/GraphicsContext.h"
 #include <GLFW/glfw3.h>
 
 namespace Ava {
@@ -27,6 +27,7 @@ namespace Ava {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_gfwContext;
 
 		struct WindowData
 		{
