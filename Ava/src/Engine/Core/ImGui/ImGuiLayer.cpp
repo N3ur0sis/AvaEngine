@@ -50,8 +50,6 @@ void Ava::ImGuiLayer::OnDetach()
 
 void Ava::ImGuiLayer::OnImGuiRender()
 {
-	static bool show = true;
-	//ImGui::ShowDemoWindow(&show);
 
 }
 

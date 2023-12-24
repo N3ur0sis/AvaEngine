@@ -47,7 +47,7 @@ namespace Ava {
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(std::bind(&Application::OnWindowClose, this, std::placeholders::_1));
 
-		AVA_TRACE("{0}", e);
+		//AVA_TRACE("{0}", e);
 
 		for (auto i = m_LayerStack.end(); i != m_LayerStack.begin();)
 		{
@@ -65,6 +65,11 @@ namespace Ava {
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
+	}
+
+	void Application::Close()
+	{
+		m_running = false;
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)

@@ -21,4 +21,4 @@
 	#define AVA_CORE_ASSERT(x, ...)
 #endif
 
-#define BIT(x) (1 << x) 
+#define BIT(x) (1 << x)

@@ -8,3 +8,6 @@
 	path = Ava/submodules/imgui
 	url = https://github.com/ocornut/imgui
 	branch = docking
+[submodule "Ava/submodules/glm"]
+	path = Ava/submodules/glm
+	url = https://github.com/g-truc/glm

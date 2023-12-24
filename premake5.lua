@@ -16,7 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Ava/submodules/GLFW/include"
 IncludeDir["GLAD"] = "Ava/submodules/GLAD/include"
 IncludeDir["ImGui"] = "Ava/submodules/imgui"
-
+IncludeDir["glm"] = "Ava/submodules/glm"
 
 group "Dependencies"
 
@@ -45,6 +45,8 @@ project "Ava"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/submodules/glm/glm/**.hpp",
+		"%{prj.name}/submodules/glm/glm/**.inl"
 	}
 
 	includedirs
@@ -54,6 +56,7 @@ project "Ava"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
 		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}",
 	}
 
 	links 
@@ -111,7 +114,8 @@ project "SandBox"
 	{
 		"Ava/submodules/spdlog/include",
 		"Ava/src",
-		"Ava/submodules/imgui"
+		"Ava/submodules/imgui",
+		"Ava/submodules/glm"
 	}
 
 	links
@@ -165,12 +169,15 @@ project "AvaEditor"
 	{
 		"Ava/submodules/spdlog/include",
 		"Ava/src",
-		"Ava/submodules"
+		"Ava/submodules",
+		"Ava/submodules/glm",
+		"Ava/submodules/GLAD/include"
 	}
 
 	links
 	{
-		"Ava"
+		"Ava",
+		"GLAD"
 	}
 
 	filter "system:windows"
